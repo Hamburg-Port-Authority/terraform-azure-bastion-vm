@@ -30,7 +30,7 @@ resource "azurerm_network_security_rule" "allow_ssh_to_bastion_host_from_trusted
   source_port_range           = "*"
   destination_port_range      = "22"
   source_address_prefix       = "*"
-  destination_address_prefix  = azurerm_network_interface.main.private_ip_address
+  destination_address_prefix  = azurerm_network_interface.main.public_ip_address_id
 }
 
 resource "azurerm_network_interface_security_group_association" "main" {
