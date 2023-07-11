@@ -62,19 +62,19 @@ variable "trusted_networks" {
 
 variable "storage_image_reference" {
 
-  type = object({
+  type = list(object({
     publisher = string
     offer     = string
     sku       = string
     version   = string
-  })
+  }))
 
-  default = {
+  default = [{
     publisher = "Debian"
     offer     = "debian-11"
     sku       = "11-backports-gen2"
     version   = "latest"
-  }
+  }]
   description = "Values for the storage image reference."
 
 }
