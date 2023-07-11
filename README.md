@@ -11,6 +11,5 @@ source = "github.com/la-cc/terraform-azure-bastion-vm?ref=0.0.7"
 
     resource_group_name = "rg-bastion-vm"
     name = "bastion-vm"
-    virtual_network_name = "vnet-bastion-vm"
 
 }

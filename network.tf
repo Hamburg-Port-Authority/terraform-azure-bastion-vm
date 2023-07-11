@@ -8,7 +8,7 @@ resource "azurerm_virtual_network" "main" {
 resource "azurerm_subnet" "main" {
   name                 = var.name
   resource_group_name  = data.azurerm_resource_group.main.name
-  virtual_network_name = var.virtual_network_name
+  virtual_network_name = format("vnet-%s", var.name)
   address_prefixes     = var.address_prefixes
 
   depends_on = [azurerm_virtual_network.main]
