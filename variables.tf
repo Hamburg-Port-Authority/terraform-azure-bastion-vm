@@ -45,6 +45,7 @@ variable "virtual_network_name" {
 
 variable "address_prefixes" {
   type        = list(string)
+  default     = ["10.0.1.0/24"]
   description = "The address prefixes for the subnet"
 
 }

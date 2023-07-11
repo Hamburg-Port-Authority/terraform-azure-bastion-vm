@@ -10,6 +10,8 @@ resource "azurerm_subnet" "main" {
   resource_group_name  = data.azurerm_resource_group.main.name
   virtual_network_name = var.virtual_network_name
   address_prefixes     = var.address_prefixes
+
+  depends_on = [azurerm_virtual_network.main]
 }
 
 resource "azurerm_network_security_group" "main" {
