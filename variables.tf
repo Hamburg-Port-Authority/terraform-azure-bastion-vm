@@ -55,11 +55,8 @@ variable "linux_vm_admin_username" {
 }
 
 variable "trusted_networks" {
-  type = map(string)
-  default = {
-
-    all = "*" # This is a special case, it means all networks are trusted.
-  }
+  type    = map(string)
+  default = {}
 }
 
 variable "tags" {

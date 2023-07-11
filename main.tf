@@ -29,7 +29,7 @@ resource "azurerm_network_security_rule" "allow_ssh_to_bastion_host_from_trusted
   protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_range      = "22"
-  source_address_prefixes     = values(var.trusted_networks)
+  source_address_prefixes     = length(var.trusted_networks) > 0 ? join(",", var.trusted_networks) : "*"
   destination_address_prefix  = azurerm_network_interface.main.private_ip_address
 }
 
