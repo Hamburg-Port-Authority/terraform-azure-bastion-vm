@@ -29,11 +29,16 @@ resource "azurerm_virtual_machine" "main" {
   }
 
   # az vm image list --offer Debian --all --output table --location westeurope
-  storage_image_reference {
-    publisher = "Debian"
-    offer     = "debian-11"
-    sku       = "11-backports-gen2"
-    version   = "latest"
+  dynamic "storage_image_reference" {
+    for_each = var.storage_image_reference
+    iterator = it
+
+    content {
+      version   = it.value.version
+      sku       = it.value.sku
+      publisher = it.value.publisher
+      offer     = it.value.offer
+    }
   }
 
   os_profile {

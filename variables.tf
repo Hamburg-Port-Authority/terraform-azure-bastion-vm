@@ -60,6 +60,19 @@ variable "trusted_networks" {
   default = {}
 }
 
+variable "storage_image_reference" {
+
+  type = map(string)
+  default = {
+    publisher = "Debian"
+    offer     = "debian-11"
+    sku       = "11-backports-gen2"
+    version   = "latest"
+  }
+  description = "Values for the storage image reference."
+
+}
+
 variable "tags" {
   type = map(string)
   default = {
