@@ -6,10 +6,10 @@ The module is used to deploy azure container registries over terraform with a de
 
 # Example Use of Module:
 
-module "bastion-vm" {
-source = "github.com/la-cc/terraform-azure-bastion-vm?ref=0.0.7"
-
-    resource_group_name = "rg-bastion-vm"
-    name = "bastion-vm"
-
-}
+    module "bastion-vm" {
+    source = "github.com/la-cc/terraform-azure-bastion-vm?ref=1.0.0"
+    
+        resource_group_name = "rg-bastion-vm"
+        name = "bastion-vm"
+    
+    }
