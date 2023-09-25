@@ -65,9 +65,9 @@ variable "storage_image_reference" {
   }))
 
   default = [{
-    publisher = "Debian"
-    offer     = "debian-11"
-    sku       = "11-backports-gen2"
+    publisher = "Canonical"
+    offer     = "0001-com-ubuntu-server-focal"
+    sku       = "20_04-lts"
     version   = "latest"
   }]
   description = "Values for the storage image reference."
