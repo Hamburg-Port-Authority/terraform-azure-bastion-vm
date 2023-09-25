@@ -1,3 +1,8 @@
+output "id" {
+  value       = azurerm_virtual_machine.main.id
+  description = "The ID of the Virtual Machine."
+}
+
 output "ip_address" {
   value       = azurerm_public_ip.main.ip_address
   description = "value of the public IP address"
