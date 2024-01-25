@@ -31,9 +31,10 @@ resource "azurerm_network_security_rule" "allow_ssh_to_bastion_host_from_trusted
   protocol                    = "Tcp"
   source_port_range           = "*"
   destination_port_range      = "22"
-  source_address_prefix       = "*"
+  source_address_prefix       = var.custom_source_address_prefix != null ? var.custom_source_address_prefix : "*"
   destination_address_prefix  = "*"
 }
+
 
 resource "azurerm_public_ip" "main" {
   name                = var.name

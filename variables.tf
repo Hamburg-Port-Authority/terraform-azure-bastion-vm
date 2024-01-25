@@ -74,6 +74,13 @@ variable "storage_image_reference" {
 
 }
 
+
+variable "custom_source_address_prefix" {
+  description = "The source address prefix to use for the security rule."
+  type        = string
+}
+
+
 variable "tags" {
   type = map(string)
   default = {
