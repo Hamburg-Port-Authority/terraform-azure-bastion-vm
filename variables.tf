@@ -26,6 +26,13 @@ variable "allocation_method" {
   description = "The allocation method to use for this Public IP Address. Possible values are Static or Dynamic."
 
 }
+
+variable "sku" {
+  type        = string
+  default     = "Standard"
+  description = "The SKU of the Public IP. Possible values are Basic and Standard."
+
+}
 variable "resource_group_name" {
   type        = string
   description = "Name of the resource group name."
